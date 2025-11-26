@@ -42,15 +42,17 @@ module DSDO(
             S0: nxt_state = (X == 1)? S1: S2;
             S1: nxt_state = (X == 1)? S1: S3;
             S2: nxt_state = (X == 1)? S1: S4;
-            S3: nxt_state = (X == 1)? S0: S5;
+            S3: nxt_state = (X == 1)? S1: S5;
             S4: nxt_state = (X == 1)? S7: S4;
             S5: nxt_state = (X == 1)? S7: S6;
             S6: nxt_state = (X == 1)? S8: S4;
             S7: nxt_state = (X == 1)? S9: S3;
-            S8: nxt_state = (X == 1)? S7: S3;
+            S8: nxt_state = (X == 1)? S9: S3;
             S9: nxt_state = (X == 1)? S1: S10;
             S10: nxt_state = (X == 1)? S1: S11;
             S11: nxt_state = (X == 1)? S7: S6;
+            
+            default nxt_state = S0;
         endcase
     end
     
